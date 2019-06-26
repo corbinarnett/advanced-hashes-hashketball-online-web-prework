@@ -149,9 +149,9 @@ def player_numbers(team_name) #method takes argument team_name
   jersey_number = [] #creates array
   game_hash.each do |location, team_data| #iterates to access team_data for home and away teams_array
   if team_data[:team_name] == team_name #if team_name accessed, matches team entered in param
-    team_data[:players].each do |stats_keys| #access players statistical keys, :number, :shoe, :points. etc.
+    team_data[:players].each do |attribute| #access players statistical keys, :number, :shoe, :points. etc.
       # binding.pry
-      jersey_number << stats_keys[:number] #shovel :number to jersey_number array
+      jersey_number << attribute[:number] #shovel :number to jersey_number array
     end
   end
 end
